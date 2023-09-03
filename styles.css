@@ -1,5 +1,9 @@
+@import url(https://db.onlinewebfonts.com/c/406b56da0c31245c249b3a3c61560d1a?family=Joyride+W05+STD);
+
+
 :root{
     --bg: #373536;
+    --text: #F8F8F8;
 }
 
 body{
@@ -9,6 +13,24 @@ body{
 
 body img{
     width:100%;
+}
+
+#bg{
+    position: absolute;
+    z-index: -999;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:90px;
+}
+
+header h1{
+    font-family:'Joyride W05 STD';
+    color:var(--text);
+    font-size:3.25rem;
 }
 
 ::-webkit-scrollbar {
