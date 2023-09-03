@@ -1,0 +1,12 @@
+:root{
+    --bg: #373536;
+}
+
+body{
+    background-color: var(--bg);
+    margin:0;
+}
+
+body img{
+    width:100%;
+}
