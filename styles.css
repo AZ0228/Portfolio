@@ -20,7 +20,7 @@ body img{
 
 #bg1{
     position: absolute;
-    z-index: -998;
+    z-index: -990;
 }
 
 #bg2{
@@ -34,6 +34,7 @@ header{
     justify-content: space-between;
     align-items: center;
     height:120px;
+    pointer-events: none;
 }
 
 header h1{
