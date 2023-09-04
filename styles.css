@@ -4,6 +4,8 @@
 :root{
     --bg: #373536;
     --text: #F8F8F8;
+    --cursorX: 0;
+    --cursorY: 0;
 }
 
 body{
@@ -13,11 +15,18 @@ body{
 
 body img{
     width:100%;
+    pointer-events: none;
 }
 
-#bg{
+#bg1{
+    position: absolute;
+    z-index: -998;
+}
+
+#bg2{
     position: absolute;
     z-index: -999;
+    width:100%;
 }
 
 header{
@@ -37,4 +46,16 @@ header h1{
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+#container{
+    position: relative;
+}
+
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* pointer-events: none; */
+  z-index: -99;
 }
