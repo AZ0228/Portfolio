@@ -3,8 +3,14 @@
 @font-face {
     font-family: Sequel Sans;
     src: url(fonts/Sequel\ Sans\ Light\ Disp.otf);
+    font-weight:normal
 }
 
+@font-face {
+    font-family: Sequel Sans;
+    src: url(fonts/Sequel\ Sans\ Semi\ Bold\ Disp.otf);
+    font-weight: bold;
+}
 
 :root{
     --bg: #373536;
@@ -30,11 +36,13 @@ body img{
 .content-container{
     display: flex;
     justify-content: center;
+    pointer-events: none;
 }
 
 .content{
     max-width: var(--width);
     width: 100%;
+    pointer-events: none;
 }
 
 #bg1{
@@ -111,6 +119,22 @@ header h1{
     font-size:1.75rem;
 }
 
-hr{
-    flex-grow:1;
+.hero{
+    height: calc(100vh - 240px);
+    padding-bottom:120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.hero h1{
+    height: auto;
+    margin: 0;
+    color: var(--text);
+    font-family: 'Sequel Sans';
+    font-weight: bold;
+    font-size: 4rem;
+    text-align: center;
+    /* line-height: 0.1; */
 }
