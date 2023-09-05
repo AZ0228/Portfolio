@@ -1,16 +1,25 @@
 @import url(https://db.onlinewebfonts.com/c/406b56da0c31245c249b3a3c61560d1a?family=Joyride+W05+STD);
 
+@font-face {
+    font-family: Sequel Sans;
+    src: url(fonts/Sequel\ Sans\ Light\ Disp.otf);
+}
+
 
 :root{
     --bg: #373536;
     --text: #F8F8F8;
     --cursorX: 0;
     --cursorY: 0;
+    --width:1500px;
 }
 
 body{
     background-color: var(--bg);
     margin:0;
+    /* display: flex; */
+    justify-content: center;
+    position: relative;
 }
 
 body img{
@@ -18,9 +27,19 @@ body img{
     pointer-events: none;
 }
 
+.content-container{
+    display: flex;
+    justify-content: center;
+}
+
+.content{
+    max-width: var(--width);
+    width: 100%;
+}
+
 #bg1{
     position: absolute;
-    z-index: -990;
+    z-index: -998;
 }
 
 #bg2{
@@ -29,12 +48,28 @@ body img{
     width:100%;
 }
 
+.smokescreen{
+    background-color: var(--bg);
+    opacity: 1;
+    position: absolute;
+    transition: opacity 1.5s;
+    height:100%;
+    width:100%;
+    z-index: 999;
+}
+
+.hidden{
+    opacity:0 !important;
+}
+
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     height:120px;
     pointer-events: none;
+    z-index: 1;
+    width:100%;
 }
 
 header h1{
@@ -51,6 +86,7 @@ header h1{
 
 #container{
     position: relative;
+    width: 100%;
 }
 
 #canvas {
@@ -59,4 +95,22 @@ header h1{
   left: 0;
   /* pointer-events: none; */
   z-index: -99;
+  /* display: none; */
+}
+
+.nav{
+    padding:30px;
+    display:flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.nav a{
+    font-family:'Sequel Sans';
+    color:var(--text);
+    font-size:1.75rem;
+}
+
+hr{
+    flex-grow:1;
 }
