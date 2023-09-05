@@ -50,6 +50,12 @@ body img{
     z-index: -998;
 }
 
+#bg1-mobile{
+    display:none;
+    position:absolute;
+    z-index: -998;
+}
+
 #bg2{
     position: absolute;
     z-index: -999;
@@ -145,14 +151,14 @@ header h1{
 #wrapper {
     position: relative;
     height: 50px;
-  }
+}
 
-  #text {
+#text {
     position: relative;
     z-index: 1;
-  }
+}
 
-  #caret {
+#caret {
     position: absolute;
     width: 20px;
     height: 3.5rem;
@@ -160,4 +166,20 @@ header h1{
     vertical-align: bottom;
     z-index: 2;  /* To place it above the text */
     left: 0;
-  }
+}
+
+@media (max-width:800px) {
+    #canvas{
+        display:none;
+    }
+    .nav{
+        display:none;
+    }
+    #bg1{
+        display:none;
+    }
+    #bg1-mobile{
+        display:block;
+
+    }
+}
