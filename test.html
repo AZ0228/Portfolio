@@ -42,51 +42,75 @@
     </div>
   
     <script>
-      const textElement = document.getElementById('text');
-      const caretElement = document.getElementById('caret');
-      const textToType = "Hello, this is a typing animation!";
-      let index = 0;
-      let caretInterval;
-      let typing = false;
-  
-      // Function to toggle caret visibility for blinking effect
-      function toggleCaret() {
-        if (!typing) {
-          if (caretElement.style.backgroundColor === 'lime') {
-            caretElement.style.backgroundColor = 'transparent';
-          } else {
-            caretElement.style.backgroundColor = 'lime';
+        const textElement = document.getElementById('text');
+        const caretElement = document.getElementById('caret');
+        
+        let textToType = "Hello, i'm James";
+        let mistypedText = "Hello, i'm Jsm";
+        let isTyping = false;
+        let typing = mistypedText;
+        let index = 0;
+        let isMistyping = true;
+        let isCorrecting = false;
+        let caretInterval;
+        let mistypeWaiting = 5;
+        
+        function moveCaret() {
+          caretElement.style.left = (textElement.offsetWidth+2) + 'px';
+        }
+        
+        function toggleCaret() {
+            if (!isTyping) {
+              if (caretElement.style.backgroundColor === 'lime') {
+                caretElement.style.backgroundColor = 'transparent';
+              } else {
+                caretElement.style.backgroundColor = 'lime';
+              }
+            }
           }
+        
+        
+        function type(){
+            if(!isCorrecting){
+                if(index < typing.length){
+                    textElement.innerHTML += typing[index];
+                    index++;
+                    moveCaret();
+                }
+                else{
+                    if(typing === textToType){
+                        isTyping = false;
+                        setTimeout(() => {
+                            caretElement.style.display = 'none';
+                        }, 2400);    
+                    }
+                    else {
+                        if(mistypeWaiting == 0){
+                            isCorrecting = true;
+                        } else {
+                            mistypeWaiting--;
+                        }
+                    }
+                }    
+            } else {
+                typing = textToType;
+                if(textElement.innerHTML == typing.slice(0,textElement.innerHTML.length)){
+                    isCorrecting = false;
+                    isTyping = false;
+                } else {
+                    textElement.innerHTML = textElement.innerHTML.slice(0, -1);
+                    index--;
+                    moveCaret();
+                    console.log('correcting')
+                }
+            }
         }
-      }
-  
-      // Function to type the text
-      function typeText() {
-        typing = true;
-        caretElement.style.backgroundColor = 'lime';  // Keep the caret visible while typing
-  
-        if (index < textToType.length) {
-          textElement.textContent += textToType[index];
-          caretElement.style.left = `${textElement.offsetWidth}px`;  // Move the caret
-          index++;
-        } else {
-          clearInterval(typingInterval);
-          setTimeout(() => {
-            caretElement.style.backgroundColor = 'transparent';
-            typing = false;
-            
-          }, 500);
-          setTimeout(() => {
-            caretElement.style.display = 'none';
-          }, 3000);
-        }
-      }
-  
-      // Initialize caret blinking
-      caretInterval = setInterval(toggleCaret, 500);
-  
-      // Initialize typing
-      const typingInterval = setInterval(typeText, 100);
+        
+        caretInterval = setInterval(toggleCaret, 500);
+        setTimeout(() => {
+            const interval = setInterval(type, 100);
+        }, 2700);
+        
     </script>
   </body>
   </html>

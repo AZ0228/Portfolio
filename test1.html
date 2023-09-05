@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Animation</title>
+    <style>
+        #container {
+        font-family: "Courier New", monospace;
+        font-size: 18px;
+        background-color: black;
+        color: lime;
+        position: relative;
+        }
+        #wrapper {
+        position: relative;
+        }
+        #text {
+        position: relative;
+        z-index: 1;
+        }
+        #caret {
+        position: absolute;
+        width: 10px;
+        height: 18px;
+        background-color: lime;
+        vertical-align: bottom;
+        z-index: 2;  /* To place it above the text */
+        left: 0;
+        }
+    </style>
+</head>
+<body>
+  <div id="container">
+    <div id="wrapper">
+      <span id="text"></span>
+      <span id="caret"></span>
+    </div>
+  </div>
+
+  <script>
+    const textElement = document.getElementById('text');
+    const caretElement = document.getElementById('caret');
+    const sequence = [
+      {text: "Hello, I'm Js", pause: 500},
+      {text: "Hello, I'm J", backspace: true},
+      {text: "Hello, I'm James"}
+    ];
+    let index = 0;
+    let sequenceIndex = 0;
+    
+    function updateCaret() {
+      caretElement.style.left = `${textElement.offsetWidth}px`;
+    }
+    
+    function runSequence() {
+      const current = sequence[sequenceIndex];
+      
+      if ('pause' in current) {
+        setTimeout(() => {
+          sequenceIndex++;
+          runSequence();
+        }, current.pause);
+        return;
+      }
+      
+      if ('backspace' in current) {
+        textElement.textContent = current.text;
+        updateCaret();
+        sequenceIndex++;
+        runSequence();
+        return;
+      }
+      
+      const interval = setInterval(() => {
+        if (index < current.text.length) {
+          textElement.textContent = current.text.substring(0, index + 1);
+          updateCaret();
+          index++;
+        } else {
+          clearInterval(interval);
+          index = 0;
+          sequenceIndex++;
+          if (sequenceIndex < sequence.length) {
+            runSequence();
+          } else {
+            setTimeout(() => caretElement.style.display = 'none', 1000);
+          }
+        }
+      }, 100);
+    }
+    
+    runSequence();
+  </script>
+</body>
+</html>
+
+</body>
+</html>
