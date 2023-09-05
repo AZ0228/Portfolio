@@ -19,7 +19,7 @@ function setupCanvas() {
 }
 
 
-if(window.innerWidth < 800) {
+if(window.innerWidth > 800) {
     imgOverlay.addEventListener('load', function() {
         // Update canvas when the overlay image is fully loaded
         setupCanvas();
