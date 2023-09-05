@@ -1,6 +1,6 @@
-const canvas = document.getElementById('canvas');
+const canvas = id('canvas');
 const ctx = canvas.getContext('2d');
-const img = document.getElementById('bg2');
+const img = id('bg2');
 const imgOverlay = new Image();
 
 imgOverlay.src = "assets/bg1.svg";
@@ -20,7 +20,7 @@ imgOverlay.addEventListener('load', function() {
 
 // Update canvas size when the main image is fully loaded
 img.addEventListener('load', setupCanvas);
-
+window.addEventListener('resize', setupCanvas);
 // Mouse move event
 canvas.addEventListener('mousemove', function (e) {
     const rect = canvas.getBoundingClientRect();
@@ -50,3 +50,24 @@ canvas.addEventListener('mousemove', function (e) {
     // Reset the composite operation to default
     ctx.globalCompositeOperation = "source-over";
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const smokescreen = qs('.smokescreen');
+    smokescreen.classList.add('hidden');
+    setTimeout(() => {
+        smokescreen.style.display = 'none'; 
+    }, 900);
+});
+
+
+function id(x) {
+    return document.getElementById(x);
+}
+
+function qs(x) {
+    return document.querySelector(x);
+}
+
+function qsa(x) {
+    return document.querySelectorAll(x);
+}
