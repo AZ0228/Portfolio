@@ -2,14 +2,12 @@ const canvas = id('canvas');
 const ctx = canvas.getContext('2d');
 const img = id('bg2');
 const imgOverlay = new Image();
-const body = qs('body');
+const body = qs('.content-container');
 
 imgOverlay.src = "assets/bg1.svg";
 
 
 body.addEventListener('mousemove', function(event) {
-    // Do something for the top element
-  
     // Forward the event to the bottom element
     let eventClone = new MouseEvent('mousemove', event);
     canvas.dispatchEvent(eventClone);

@@ -12,74 +12,105 @@
         color: lime;
         position: relative;
       }
+  
+      #wrapper {
+        position: relative;
+      }
+  
+      #text {
+        position: relative;
+        z-index: 1;
+      }
+  
       #caret {
         position: absolute;
         width: 10px;
         height: 18px;
         background-color: lime;
+        vertical-align: bottom;
+        z-index: 2;  /* To place it above the text */
         left: 0;
       }
     </style>
   </head>
   <body>
     <div id="container">
-      <span id="text"></span>
-      <span id="caret"></span>
+      <div id="wrapper">
+        <span id="text"></span>
+        <span id="caret"></span>
+      </div>
     </div>
   
     <script>
-      const textElement = document.getElementById('text');
-      const caretElement = document.getElementById('caret');
-  
-      let textToType = "Hello, I'm James";
-      let mistypedText = "Hello, I'm Js";
-      let index = 0;
-      let isMistyping = true;
-      let isCorrecting = false;
-  
-      function moveCaret() {
-        caretElement.style.left = textElement.offsetWidth + 'px';
-      }
-  
-      function type() {
-        if (isMistyping) {
-          if (index < mistypedText.length) {
-            textElement.innerHTML += mistypedText[index];
-            index++;
-            moveCaret();
-          } else {
-            isMistyping = false;
-            setTimeout(() => {
-              isCorrecting = true;
-              index = mistypedText.length - 1;
-              type();
-            }, 500);
-          }
-        } else if (isCorrecting) {
-          if (index >= "Hello, I'm J".length) {
-            textElement.innerHTML = textElement.innerHTML.slice(0, -1);
-            index--;
-            moveCaret();
-          } else {
-            isCorrecting = false;
-            index = "Hello, I'm J".length;
-            textToType = textToType.slice(index);
-            index = 0;
-          }
-        } else {
-          if (index < textToType.length) {
-            textElement.innerHTML += textToType[index];
-            index++;
-            moveCaret();
-          } else {
-            setTimeout(() => {
-              caretElement.style.display = 'none';
-            }, 1000);
-          }
+        const textElement = document.getElementById('text');
+        const caretElement = document.getElementById('caret');
+        
+        let textToType = "Hello, i'm James";
+        let mistypedText = "Hello, i'm Jsm";
+        let isTyping = false;
+        let typing = mistypedText;
+        let index = 0;
+        let isMistyping = true;
+        let isCorrecting = false;
+        let caretInterval;
+        let mistypeWaiting = 5;
+        
+        function moveCaret() {
+          caretElement.style.left = (textElement.offsetWidth+2) + 'px';
         }
-      }
-  
-      const interval = setInterval(type, 100);
+        
+        function toggleCaret() {
+            if (!isTyping) {
+              if (caretElement.style.backgroundColor === 'lime') {
+                caretElement.style.backgroundColor = 'transparent';
+              } else {
+                caretElement.style.backgroundColor = 'lime';
+              }
+            }
+          }
+        
+        
+        function type(){
+            if(!isCorrecting){
+                if(index < typing.length){
+                    textElement.innerHTML += typing[index];
+                    index++;
+                    moveCaret();
+                }
+                else{
+                    if(typing === textToType){
+                        isTyping = false;
+                        setTimeout(() => {
+                            caretElement.style.display = 'none';
+                        }, 2400);    
+                    }
+                    else {
+                        if(mistypeWaiting == 0){
+                            isCorrecting = true;
+                        } else {
+                            mistypeWaiting--;
+                        }
+                    }
+                }    
+            } else {
+                typing = textToType;
+                if(textElement.innerHTML == typing.slice(0,textElement.innerHTML.length)){
+                    isCorrecting = false;
+                    isTyping = false;
+                } else {
+                    textElement.innerHTML = textElement.innerHTML.slice(0, -1);
+                    index--;
+                    moveCaret();
+                    console.log('correcting')
+                }
+            }
+        }
+        
+        caretInterval = setInterval(toggleCaret, 500);
+        setTimeout(() => {
+            const interval = setInterval(type, 100);
+        }, 2700);
+        
     </script>
   </body>
   </html>

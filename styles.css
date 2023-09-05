@@ -36,7 +36,7 @@ body img{
 .content-container{
     display: flex;
     justify-content: center;
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
 .content{
@@ -110,13 +110,14 @@ header h1{
     padding:30px;
     display:flex;
     justify-content: space-between;
-    gap: 30px;
+    gap: 40px;
 }
 
 .nav a{
     font-family:'Sequel Sans';
     color:var(--text);
-    font-size:1.75rem;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
 }
 
 .hero{
@@ -128,7 +129,8 @@ header h1{
     pointer-events: none;
 }
 
-.hero h1{
+.hero h1,
+.hero span{
     height: auto;
     margin: 0;
     color: var(--text);
@@ -136,5 +138,26 @@ header h1{
     font-weight: bold;
     font-size: 4rem;
     text-align: center;
-    /* line-height: 0.1; */
+    line-height: 0.9;
+    /* margin: 0 20px; */
 }
+
+#wrapper {
+    position: relative;
+    height: 50px;
+  }
+
+  #text {
+    position: relative;
+    z-index: 1;
+  }
+
+  #caret {
+    position: absolute;
+    width: 20px;
+    height: 3.5rem;
+    background-color: #F8F8F8;
+    vertical-align: bottom;
+    z-index: 2;  /* To place it above the text */
+    left: 0;
+  }
