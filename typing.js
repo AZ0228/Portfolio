@@ -19,9 +19,11 @@ function toggleCaret() {
     if (!isTyping) {
       if (caretElement.style.backgroundColor === 'rgb(248, 248, 248)') {
         caretElement.style.backgroundColor = 'transparent';
+        caretElement.style.boxShadow = 'none';
+        console.log(caretElement.style.boxShadow);
       } else {
-        console.log(caretElement.style.backgroundColor)
         caretElement.style.backgroundColor = 'rgb(248, 248, 248)';
+        caretElement.style.boxShadow = '0 0 5px rgb(248, 248, 248)';
       }
     }
   }
