@@ -7,9 +7,6 @@ const body = qs('.content-container');
 imgOverlay.src = "assets/bg1.svg";
 
 
-
-
-
 function setupCanvas() {
     canvas.width = img.clientWidth;
     canvas.height = img.clientHeight;

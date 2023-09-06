@@ -18,6 +18,7 @@
     --cursorX: 0;
     --cursorY: 0;
     --width:1500px;
+    --h1:4rem;
 }
 
 body{
@@ -26,6 +27,7 @@ body{
     /* display: flex; */
     justify-content: center;
     position: relative;
+    overflow-x: hidden;
 }
 
 body img{
@@ -142,7 +144,7 @@ header h1{
     color: var(--text);
     font-family: 'Sequel Sans';
     font-weight: bold;
-    font-size: 4rem;
+    font-size: var(--h1);
     text-align: center;
     line-height: 0.9;
     /* margin: 0 20px; */
@@ -169,6 +171,20 @@ header h1{
 }
 
 @media (max-width:800px) {
+    :root{
+        --h1:3rem;
+    }
+    #caret{
+        height:2.5rem;
+        width:15px;
+    }
+    body{
+        background-image: url('assets/bg1.svg');
+        background-size:200%;
+    }
+    #content{
+        overflow-x: hidden;
+    }
     #canvas{
         display:none;
     }
@@ -178,8 +194,11 @@ header h1{
     #bg1{
         display:none;
     }
+    #bg2{
+        display:none;
+    }
     #bg1-mobile{
-        display:block;
-
+        /* display:block; */
+        transform:scale(3);
     }
 }
