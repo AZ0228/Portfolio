@@ -10,6 +10,7 @@ let isMistyping = true;
 let isCorrecting = false;
 let caretInterval;
 let mistypeWaiting = 6;
+let caretVisible = true;
 
 function moveCaret() {
     caretElement.style.left = (textElement.offsetWidth+4) + 'px';
@@ -21,9 +22,11 @@ function toggleCaret() {
         caretElement.style.backgroundColor = 'transparent';
         caretElement.style.boxShadow = 'none';
         console.log(caretElement.style.boxShadow);
+        caretVisible = false;
       } else {
         caretElement.style.backgroundColor = 'rgb(248, 248, 248)';
         caretElement.style.boxShadow = '0 0 5px rgb(248, 248, 248)';
+        caretVisible = true;
       }
     }
   }
@@ -32,6 +35,9 @@ function toggleCaret() {
 function type(){
     if(!isCorrecting){
         if(index < typing.length){
+            if(caretVisible == false){
+                return;
+            }
             isTyping = true;
             textElement.innerHTML += typing[index];
             index++;
@@ -46,11 +52,13 @@ function type(){
                 }, 2400);    
             }
             else {
-                if(mistypeWaiting == 0){
+                if(mistypeWaiting == 0 && caretVisible==true){
                     isCorrecting = true;
                     isTyping = true;
                 } else {
-                    mistypeWaiting--;
+                    if(mistypeWaiting != 0){
+                        mistypeWaiting--;
+                    }
                     isTyping = false;
 
                 }
