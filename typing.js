@@ -42,6 +42,7 @@ function type(){
                 isTyping = false;
                 setTimeout(() => {
                     caretElement.style.display = 'none';
+                    clearInterval(caretInterval);
                 }, 2400);    
             }
             else {
