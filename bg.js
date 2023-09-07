@@ -4,7 +4,7 @@ const img = id('bg2');
 const imgOverlay = new Image();
 const body = qs('.content-container');
 
-imgOverlay.src = "assets/bg1.svg";
+imgOverlay.src = "assets/bg11.png";
 
 
 function setupCanvas() {

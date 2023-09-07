@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: Sequel Sans;
-    src: url(fonts/Sequel\ Sans\ Light\ Disp.otf);
+    src: url(fonts/Sequel\ Sans\ Light\ Body.otf);
     font-weight:lighter;
 }
 
@@ -18,8 +18,10 @@
     font-weight: normal;
 }
 
-p{
-    margin:0;
+@font-face {
+    font-family: Sequel Sans Book;
+    src: url(fonts/Sequel\ Sans\ Book\ Head.otf);
+    font-weight: normal;
 }
 
 :root{
@@ -31,6 +33,24 @@ p{
     --h1:4rem;
     --p: 1.5rem;
 }
+
+
+p{
+    margin:0;
+    color: var(--text);
+    font-family: 'Sequel Sans Book';
+    font-size: var(--p);
+    line-height: 1.3;
+}
+
+h1:hover,
+#text:hover,
+a:hover{
+    text-shadow: 0px 0px 4px var(--text);
+    transition: all 1s;
+    cursor:pointer;
+}
+
 
 body{
     background-color: var(--bg);
@@ -80,13 +100,18 @@ body img{
     opacity: 1;
     position: absolute;
     transition: opacity 1.5s;
-    height:100%;
+    height:300%;
     width:100%;
     z-index: 999;
 }
 
 .hidden{
     opacity:0 !important;
+}
+
+.appear{
+    transform:translate(0,0) !important;
+    opacity:1;
 }
 
 header{
@@ -97,6 +122,9 @@ header{
     pointer-events: none;
     z-index: 1;
     width:100%;
+    transform:translateY(-120px);
+    transition: all 1s;
+    opacity:0;
 }
 
 header h1{
@@ -130,6 +158,7 @@ header h1{
     display:flex;
     justify-content: space-between;
     gap: 40px;
+    pointer-events: all;
 }
 
 .nav a{
@@ -171,6 +200,7 @@ header h1{
 #text {
     position: relative;
     z-index: 1;
+    pointer-events: all;
 }
 
 #caret {
@@ -189,18 +219,6 @@ header h1{
     animation: pulse-shadow 4s infinite;
 }
 
-@keyframes pulse-shadow {
-    0% {
-      text-shadow: 0px 0px 0px var(--text);
-    }
-    50% {
-      text-shadow: 0px 0px 5px var(--text);
-    }
-    100% {
-      text-shadow: 0px 0px 0px var(--text);
-    }
-  }
-
 #learn-more{
     display:flex;
     justify-content: center;
@@ -213,16 +231,35 @@ header h1{
     color:var(--text);
     bottom: 20px;
     pointer-events:all;
+    transition: all 1s;
+    opacity:0;
+    transform:translateY(100px);
 }
 
 #learn-more:hover{
-    transform:translateY(10px);
+    transform:translateY(-10px);
     cursor:pointer;
+    animation: up-and-down 2s infinite;
+    text-shadow: 0 0 3px var(--text);
 }
 
 #learn-more img{
     height: 40px;
     width: 40px;
+}
+
+.about{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap:50px;
+}
+
+.about p{
+    width:700px;
+    text-align: center;
 }
 
 @media (max-width:800px) {
@@ -255,5 +292,33 @@ header h1{
     #bg1-mobile{
         /* display:block; */
         transform:scale(3);
+    }
+}
+
+/* ------------------keyframe animations------------------- */
+@keyframes pulse-shadow {
+    0% {
+      text-shadow: 0px 0px 0px var(--text);
+    }
+    50% {
+      text-shadow: 0px 0px 5px var(--text);
+    }
+    100% {
+      text-shadow: 0px 0px 0px var(--text);
+    }
+}
+
+@keyframes up-and-down{
+    0%{
+        transform:translateY(0px);
+    }
+    30%{
+        transform:translateY(10px);
+    }
+    60%{
+        transform:translateY(0px);
+    }
+    100%{
+        transform: translateY(0px);
     }
 }
