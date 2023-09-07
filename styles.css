@@ -3,7 +3,7 @@
 @font-face {
     font-family: Sequel Sans;
     src: url(fonts/Sequel\ Sans\ Light\ Disp.otf);
-    font-weight:normal
+    font-weight:lighter;
 }
 
 @font-face {
@@ -13,9 +13,9 @@
 }
 
 @font-face {
-    font-family: Sequel Sans;
+    font-family: Sequel Sans1;
     src: url(fonts/Sequel\ Sans\ Medium\ Disp.otf);
-    font-weight: lighter;
+    font-weight: normal;
 }
 
 p{
@@ -134,9 +134,10 @@ header h1{
 
 .nav a{
     font-family:'Sequel Sans';
+    font-weight: lighter;
     color:var(--text);
     font-size: 1.5rem;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
 .hero{
@@ -205,12 +206,18 @@ header h1{
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    font-family: 'Sequel Sans';
+    font-family: 'Sequel Sans1';
     font-weight:lighter;
     font-size:var(--p);
     position: absolute;
     color:var(--text);
     bottom: 20px;
+    pointer-events:all;
+}
+
+#learn-more:hover{
+    transform:translateY(10px);
+    cursor:pointer;
 }
 
 #learn-more img{
