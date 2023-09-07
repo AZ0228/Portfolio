@@ -1,4 +1,3 @@
-
 function learnMore(){
     const about = qs('.about');
     const learnmore = id('learn-more');
@@ -9,6 +8,20 @@ function learnMore(){
     }, 1000);
 }
 
+function learnMoreAnimation(){
+    const learnmore = id('learn-more');
+    learnmore.addEventListener('mouseover', function(){
+        const learnmoreimg = learnmore.querySelector('img');
+        setTimeout(() => {
+            learnmoreimg.src = "assets/chevron-down-glow.svg";            
+        }, 100);
+    });
+    learnmore.addEventListener('mouseleave', function(){
+        const learnmoreimg = learnmore.querySelector('img');
+        learnmoreimg.src = "assets/chevron-down.svg";
+    });
+}
+
 function setUpSmokeScreen(){
     const windowtop = window.scrollY;
     const smokescreen  = qs('.smokescreen');
@@ -16,7 +29,7 @@ function setUpSmokeScreen(){
     smokescreen.classList.add('hidden');
     setTimeout(() => {
         smokescreen.style.display = 'none';
-    }, 900);
+    }, 0);
 
 }
 
@@ -31,6 +44,7 @@ window.addEventListener('scroll', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     setUpSmokeScreen();
+    learnMoreAnimation();
 });
 
 
