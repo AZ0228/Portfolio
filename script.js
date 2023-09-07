@@ -26,25 +26,44 @@ function setUpSmokeScreen(){
     const windowtop = window.scrollY;
     const smokescreen  = qs('.smokescreen');
     smokescreen.style.transform = `translateY(${windowtop}px)`;
-    smokescreen.classList.add('hidden');
+    setTimeout(() => {
+            smokescreen.classList.add('hidden');
+    }, 100);    
     setTimeout(() => {
         smokescreen.style.display = 'none';
-    }, 0);
+    }, 2000);
 
+}
+
+function startAnimation(){
+    let gone = qsa('.gone');
+    for(let item of gone){
+        item.classList.remove('gone');
+        item.classList.add('appear');
+        setTimeout(() => {
+            item.style.opacity = 1;
+        }, 500);
+    }
 }
 
 window.addEventListener('scroll', function() {
     const elementTop = qs('.about').getBoundingClientRect().top;
     const scrollY = window.scrollY;
+    const learnmore = id('learn-more');
     if(scrollY < elementTop){
-        const learnmore = id('learn-more');
         learnmore.classList.remove('hidden');
+    } else {
+        if(!learnmore.classList.contains('hidden')){
+            learnmore.classList.add('hidden');
+        }
     }
+
 });
 
 document.addEventListener('DOMContentLoaded', function() {
     setUpSmokeScreen();
     learnMoreAnimation();
+
 });
 
 

@@ -49,7 +49,10 @@ function type(){
                 setTimeout(() => {
                     caretElement.style.display = 'none';
                     clearInterval(caretInterval);
-                }, 2400);    
+                }, 2400);   
+                setTimeout(() => {                  
+                    startAnimation();
+                }, 500); 
             }
             else {
                 if(mistypeWaiting == 0 && caretVisible==true){
