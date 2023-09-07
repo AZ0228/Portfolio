@@ -9,6 +9,17 @@ function learnMore(){
     }, 1000);
 }
 
+function setUpSmokeScreen(){
+    const windowtop = window.scrollY;
+    const smokescreen  = qs('.smokescreen');
+    smokescreen.style.transform = `translateY(${windowtop}px)`;
+    smokescreen.classList.add('hidden');
+    setTimeout(() => {
+        smokescreen.style.display = 'none';
+    }, 900);
+
+}
+
 window.addEventListener('scroll', function() {
     const elementTop = qs('.about').getBoundingClientRect().top;
     const scrollY = window.scrollY;
@@ -19,11 +30,7 @@ window.addEventListener('scroll', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    const smokescreen = qs('.smokescreen');
-    smokescreen.classList.add('hidden');
-    setTimeout(() => {
-        smokescreen.style.display = 'none'; 
-    }, 900);
+    setUpSmokeScreen();
 });
 
 
