@@ -9,8 +9,11 @@ let index = 0;
 let isMistyping = true;
 let isCorrecting = false;
 let caretInterval;
-let mistypeWaiting = 6;
 let caretVisible = true;
+
+//intervals
+let mistypeWaiting = 6;
+let clear = 2400;
 
 function moveCaret() {
     caretElement.style.left = (textElement.offsetWidth+4) + 'px';
@@ -49,10 +52,10 @@ function type(){
                 setTimeout(() => {
                     caretElement.style.display = 'none';
                     clearInterval(caretInterval);
-                }, 2400);   
+                }, clear);   
                 setTimeout(() => {                  
                     startAnimation();
-                }, 500); 
+                }, 300); 
             }
             else {
                 if(mistypeWaiting == 0 && caretVisible==true){
@@ -84,4 +87,12 @@ caretInterval = setInterval(toggleCaret, 500);
 setTimeout(() => {
     const interval = setInterval(type, 100);
 }, 2700);
+
+document.addEventListener('keypress', function(event) {
+    // The 'event' object contains information about the keypress event
+    mistypeWaiting = 6;
+    clear = 100;
+    interval = setInterval(type, 30);
+    caretInterval = setInterval(toggleCaret, 80);
+  });
 
