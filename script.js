@@ -1,13 +1,3 @@
-function learnMore(){
-    const about = qs('.about');
-    const learnmore = qs('.learn-more');
-    console.log(learnmore);     
-    about.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-    setTimeout(() => {
-        learnmore.classList.add('hidden');
-    }, 1000);
-}
-
 function learnMoreAnimation(){
     const learnmore = qs('.learn-more');
     learnmore.addEventListener('mouseover', function(){
@@ -20,6 +10,11 @@ function learnMoreAnimation(){
         const learnmoreimg = learnmore.querySelector('img');
         learnmoreimg.src = "assets/chevron-down.svg";
     });
+}
+
+function scrollto(elem){
+    const element = qs(elem);
+    element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
 }
 
 function setUpSmokeScreen(){
