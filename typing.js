@@ -9,6 +9,7 @@ let index = 0;
 let isMistyping = true;
 let isCorrecting = false;
 let caretInterval;
+
 let interval;
 let caretVisible = true;
 
@@ -53,6 +54,7 @@ function type(){
                 setTimeout(() => {
                     caretElement.style.display = 'none';
                     clearInterval(caretInterval);
+
                     clearInterval(interval);
                 }, clear);   
                 setTimeout(() => {                  
