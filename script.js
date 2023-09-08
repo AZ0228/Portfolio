@@ -1,6 +1,6 @@
 function learnMore(){
     const about = qs('.about');
-    const learnmore = id('learn-more');
+    const learnmore = qs('.learn-more');
     console.log(learnmore);     
     about.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
     setTimeout(() => {
@@ -9,7 +9,7 @@ function learnMore(){
 }
 
 function learnMoreAnimation(){
-    const learnmore = id('learn-more');
+    const learnmore = qs('.learn-more');
     learnmore.addEventListener('mouseover', function(){
         const learnmoreimg = learnmore.querySelector('img');
         setTimeout(() => {
@@ -49,7 +49,7 @@ function startAnimation(){
 window.addEventListener('scroll', function() {
     const elementTop = qs('.about').getBoundingClientRect().top;
     const scrollY = window.scrollY;
-    const learnmore = id('learn-more');
+    const learnmore = qs('.learn-more');
     if(scrollY < elementTop){
         learnmore.classList.remove('hidden');
     } else {
