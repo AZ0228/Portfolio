@@ -187,6 +187,7 @@ header h1{
     position: relative;
     height: 50px;
     display: flex;
+    margin: 0 50px; 
 }
 
 #text {
@@ -229,7 +230,6 @@ header h1{
 }
 
 .learn-more:hover{
-    transform:translateY(-10px);
     cursor:pointer;
     animation: up-and-down 2s infinite;
     text-shadow: 0 0 3px var(--text);
@@ -333,6 +333,7 @@ header h1{
 
 @media (max-width:500px){
     :root{
+        --h1:2.5rem;
         --p:1em;
     }
 }
