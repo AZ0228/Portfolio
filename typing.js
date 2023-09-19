@@ -87,9 +87,9 @@ function type(){
     }
 }
 
-caretInterval = setInterval(toggleCaret, 500);
+caretInterval = setInterval(toggleCaret, 400);
 setTimeout(() => {
-    interval = setInterval(type, 100);
+    interval = setInterval(type, 75);
 }, 2700);
 
 document.addEventListener('keypress', function(event) {
