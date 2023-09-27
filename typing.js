@@ -9,6 +9,7 @@ let index = 0;
 let isMistyping = true;
 let isCorrecting = false;
 let caretInterval;
+
 let interval;
 let caretVisible = true;
 
@@ -53,6 +54,7 @@ function type(){
                 setTimeout(() => {
                     caretElement.style.display = 'none';
                     clearInterval(caretInterval);
+
                     clearInterval(interval);
                 }, clear);   
                 setTimeout(() => {                  
@@ -85,9 +87,9 @@ function type(){
     }
 }
 
-caretInterval = setInterval(toggleCaret, 500);
+caretInterval = setInterval(toggleCaret, 400);
 setTimeout(() => {
-    interval = setInterval(type, 100);
+    interval = setInterval(type, 75);
 }, 2700);
 
 document.addEventListener('keypress', function(event) {
