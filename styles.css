@@ -26,13 +26,16 @@
 
 :root{
     --bg: #373536;
+    --bg2: #575757;
     --text: #F8F8F8;
     --cursorX: 0;
     --cursorY: 0;
     --width:1500px;
     --h1:4rem;
     --h2:2.5rem;
+    --h3:2em;
     --p: 1.5rem;
+    --psmaller: 1.2em;
 }
 
 h2{
@@ -44,6 +47,20 @@ h2{
     font-size: var(--h2);
     text-align: center;
     line-height: 0.9;
+    margin-bottom: 50px;
+}
+
+h3{
+    height: auto;
+    margin: 0;
+    color: var(--text);
+    font-family: 'Sequel Sans';
+    font-weight: bold;
+    font-size: var(--h3);
+    text-align: center;
+    line-height: 0.9;
+    margin: 0px 0px 30px 5px;
+    text-align:start;
 }
 
 p{
@@ -75,24 +92,27 @@ body{
 
 body img{
     width:100%;
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
 .content-container{
     display: flex;
     justify-content: center;
     /* pointer-events: none; */
+    position: relative;
+    z-index: 1;
 }
 
 .content{
     max-width: var(--width);
     width: 100%;
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
 #bg1{
     position: absolute;
     z-index: -998;
+    /* display: none; */
 }
 
 #bg1-mobile{
@@ -287,10 +307,50 @@ header h1{
 
 .project{
     max-width: 1200px;
+    border-radius:25px;
+    background-color: var(--bg);
+    border: 3px solid var(--bg2);
+    padding: 30px;
+    display:flex;
+    flex-direction: column;
+    /* box-shadow: 0px 0px 8px var(--text); */
 }
 
-.project img{
-    width: 40%;
+
+
+
+
+.project-container{
+    display:flex;
+    gap:20px;
+}
+
+.project-container img{
+    width: 100%;
+    height: auto;
+    align-content: start;
+    border-radius: 10px;
+    transition: all 1s;
+    z-index: 20;
+}
+
+.project-container img:hover{
+    box-shadow: 0px 0px 15px var(--text);
+}
+
+.project-container p{
+    font-size: var(--psmaller);
+}
+
+.ptext{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.project-img{
+    display:flex;
+    align-items: flex-start;
 }
 
 /* ------------------active classes------------------------ */

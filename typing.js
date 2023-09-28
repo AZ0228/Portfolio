@@ -89,7 +89,7 @@ function type(){
 
 caretInterval = setInterval(toggleCaret, 400);
 setTimeout(() => {
-    interval = setInterval(type, 75);
+    interval = setInterval(type, 60);
 }, 2700);
 
 document.addEventListener('keypress', function(event) {
