@@ -322,14 +322,14 @@ header h1{
 
 .project-container{
     display:flex;
-    gap:20px;
+    gap: 30px;
 }
 
 .project-container img{
-    width: 100%;
+    width: 600px;
     height: auto;
     align-content: start;
-    border-radius: 10px;
+    border-radius: 20px;
     transition: all 1s;
     z-index: 20;
 }
@@ -393,6 +393,14 @@ header h1{
     }
 }
 
+/* ------------------media queries------------------- */
+
+@media (max-width:1200px){
+    .project-container img{
+        width: 400px;
+    }
+}
+
 @media (max-width:800px) {
     :root{
         --h1:3rem;
@@ -403,7 +411,7 @@ header h1{
         width:15px;
     }
     body{
-        background-image: url('assets/bg1.svg');
+        /* background-image: url('assets/bg1.svg'); */
         background-size:200%;
     }
     #content{
@@ -422,9 +430,13 @@ header h1{
         display:none;
     }
     #bg1-mobile{
-        /* display:block; */
-        transform:scale(3);
+        display:block;
+        transform:scale(2.5);
     }
+    .project-container img{
+        width: 300px;
+    }
+
 }
 
 @media (max-width:500px){
