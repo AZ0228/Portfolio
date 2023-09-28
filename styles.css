@@ -80,6 +80,9 @@ a:hover{
     cursor:pointer;
 }
 
+html{
+    overflow-x:hidden;
+}
 
 body{
     background-color: var(--bg);
@@ -88,6 +91,7 @@ body{
     justify-content: center;
     position: relative;
     overflow-x: hidden;
+    overflow: none;
 }
 
 body img{
@@ -401,6 +405,17 @@ header h1{
     }
 }
 
+@media (max-width:1000px){
+    .container{
+        transform:scale(3);
+    }
+    .project-container{
+        flex-direction: column;
+    }
+    .project-container img{
+        width: 100%;
+    }}
+
 @media (max-width:800px) {
     :root{
         --h1:3rem;
@@ -415,7 +430,7 @@ header h1{
         background-size:200%;
     }
     #content{
-        overflow-x: hidden;
+        overflow: hidden;
     }
     #canvas{
         display:none;
@@ -432,6 +447,8 @@ header h1{
     #bg1-mobile{
         display:block;
         transform:scale(2.5);
+        height: 60%;
+        width: auto;
     }
     .project-container img{
         width: 300px;
