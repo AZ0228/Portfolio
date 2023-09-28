@@ -414,7 +414,30 @@ header h1{
     }
     .project-container img{
         width: 100%;
-    }}
+    }
+    #content{
+        overflow: hidden;
+    }
+    #canvas{
+        display:none;
+    }
+    .nav{
+        display:none;
+    }
+    #bg2{
+        display:none;
+    }
+    #bg1{
+        display:none;
+    }
+    #bg1-mobile{
+        display:block;
+        transform:scale(2.5);
+        height: 60%;
+        width: auto;
+    }
+
+}
 
 @media (max-width:800px) {
     :root{
@@ -460,5 +483,8 @@ header h1{
     :root{
         --h1:2.5rem;
         --p:1em;
+    }
+    .project-container img{
+        width: 250px;
     }
 }
