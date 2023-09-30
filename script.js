@@ -41,7 +41,20 @@ function startAnimation(){
     }
 }
 
-window.addEventListener('scroll', function() {
+function getCumulativeOffset(element) {
+    let height = 0;
+    while(element) {
+        height += element.offsetTop;
+        element = element.offsetParent;
+    }
+    return height;
+}
+
+const scroll = id('contentWrapper');
+scroll.addEventListener('scroll', function() {
+    if(window.innerWidth<=1000){
+        return;
+    }
     const elementTop = qs('.about').getBoundingClientRect().top;
     const scrollY = window.scrollY;
     const learnmore = qs('.learn-more');
@@ -53,7 +66,21 @@ window.addEventListener('scroll', function() {
         }
     }
 
-});
+    const projects = qs('.projects');
+    const projectHeight = projects.getBoundingClientRect().top;
+    const height = getCumulativeOffset(projects);
+    const header = qs('header');
+    if(scrollY > projectHeight-30){
+        console.log('fixed');
+        header.style.position = 'absolute';
+        header.style.top = `${height-30}px`;
+        header.style.transition = 'none';
+    } else {
+        header.style.position = 'fixed';
+        header.style.top = "0px";
+    }
+
+}, { passive: false });
 
 document.addEventListener('DOMContentLoaded', function() {
     setUpSmokeScreen();

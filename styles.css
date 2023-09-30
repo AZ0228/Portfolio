@@ -516,6 +516,8 @@ header h1{
 @media (max-width:800px) {
     :root{
         --h1:3rem;
+        --h2:2em;
+        --h3:1.5em;
         --p:1.2em;
     }
     #caret{
@@ -556,6 +558,8 @@ header h1{
 @media (max-width:500px){
     :root{
         --h1:2.5rem;
+        --h2:1.7em;
+        --h3:1em;
         --p:1em;
     }
     .hero{
@@ -563,5 +567,12 @@ header h1{
     }
     .project-container img{
         width: 250px;
+    }
+    header{
+        height:90px;
+    }
+    header h1{
+        font-size:2.5rem;
+        padding:20px;
     }
 }
