@@ -517,7 +517,7 @@ header h1{
     :root{
         --h1:3rem;
         --h2:2em;
-        --h3:1.5em;
+        --h3:1.8em;
         --p:1.2em;
     }
     #caret{
@@ -559,7 +559,6 @@ header h1{
     :root{
         --h1:2.5rem;
         --h2:1.7em;
-        --h3:1em;
         --p:1em;
     }
     .hero{
