@@ -563,7 +563,7 @@ header h1{
         --p:1em;
     }
     .hero{
-        height: calc(90vh - 240px);
+        height: calc(100vh - 120px);
     }
     .project-container img{
         width: 250px;
