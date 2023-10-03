@@ -99,6 +99,7 @@ html{
 body{
     background-color: var(--bg);
     margin:0;
+    /* display: flex; */
     justify-content: center;
     position: relative;
     overflow-x: hidden;
@@ -157,17 +158,13 @@ header{
     justify-content: space-between;
     align-items: center;
     height:120px;
-    pointer-events: none;
+    /* pointer-events: none; */
     z-index: 1;
     width:100%;
     transform:translateY(-120px);
     transition: all 1s;
     opacity:0;
-    position: fixed;
-    top: 0;
-    /* left: 0; */
-    justify-self: center;
-    max-width: var(--width);
+    position: relative;
 }
 
 header h1{
@@ -213,7 +210,7 @@ header h1{
 }
 
 .hero{
-    height: calc(100vh - 120px);
+    height: calc(100vh - 240px);
     padding-bottom:120px;
     display: flex;
     justify-content: center;
@@ -240,7 +237,7 @@ header h1{
     height: 50px;
     display: flex;
     margin: 0 50px;
-    /* transform: translateY(-20px); */
+    transform: translateY(-20px);
 }
 
 #text {
@@ -516,8 +513,6 @@ header h1{
 @media (max-width:800px) {
     :root{
         --h1:3rem;
-        --h2:2em;
-        --h3:1.8em;
         --p:1.2em;
     }
     #caret{
@@ -558,20 +553,12 @@ header h1{
 @media (max-width:500px){
     :root{
         --h1:2.5rem;
-        --h2:1.7em;
         --p:1em;
     }
     .hero{
-        height: calc(100vh - 120px);
+        height: calc(90vh - 240px);
     }
     .project-container img{
         width: 250px;
-    }
-    header{
-        height:90px;
-    }
-    header h1{
-        font-size:2.5rem;
-        padding:20px;
     }
 }

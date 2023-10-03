@@ -66,21 +66,21 @@ scroll.addEventListener('scroll', function() {
         }
     }
 
-    const projects = qs('.projects');
-    const projectHeight = projects.getBoundingClientRect().top;
-    const height = getCumulativeOffset(projects);
-    const header = qs('header');
-    if(scrollY > projectHeight-30){
-        console.log('fixed');
-        header.style.position = 'absolute';
-        header.style.top = `${height-30}px`;
-        header.style.transition = 'none';
-    } else {
-        header.style.position = 'fixed';
-        header.style.top = "0px";
-    }
+    // const projects = qs('.projects');
+    // const projectHeight = projects.getBoundingClientRect().top;
+    // const height = getCumulativeOffset(projects);
+    // const header = qs('header');
+    // if(scrollY > projectHeight-30){
+    //     console.log('fixed');
+    //     header.style.position = 'absolute';
+    //     header.style.top = `${height-30}px`;
+    //     header.style.transition = 'none';
+    // } else {
+    //     header.style.position = 'fixed';
+    //     header.style.top = "0px";
+    // }
 
-}, { passive: false });
+}); 
 
 document.addEventListener('DOMContentLoaded', function() {
     setUpSmokeScreen();
