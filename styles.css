@@ -596,6 +596,12 @@ header h1{
         --h1:2.5rem;
         --p:1em;
     }
+    .projects{
+        padding:20px;
+    }
+    .project{
+        padding: 20px 20px 5px 20px;
+    }
     header{
         height:90px;
     }
