@@ -596,6 +596,9 @@ header h1{
         --h1:2.5rem;
         --p:1em;
     }
+    .extra{
+        display: none;
+    }
     .hero{
         height: calc(90vh - 240px);
     }
