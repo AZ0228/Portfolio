@@ -37,6 +37,7 @@
     --h4: 1.5em;
     --p: 1.5rem;
     --psmaller: 1.1em;
+    --psmallest: 0.8em;
 }
 
 h2{
@@ -62,6 +63,8 @@ h3{
     line-height: 0.9;
     margin: 0px 0px 30px 5px;
     text-align:start;
+    display:flex;
+    align-items: flex-start;
 }
 
 h4{
@@ -328,7 +331,7 @@ header h1{
     border-radius:25px;
     background-color: var(--bg);
     border: 3px solid var(--bg2);
-    padding: 30px;
+    padding: 30px 30px 10px 30px;
     display:flex;
     flex-direction: column;
     /* box-shadow: 0px 0px 8px var(--text); */
@@ -425,8 +428,39 @@ header h1{
     pointer-events: all;
 }
 
+.technologies{
+    display:flex;
+    /* margin-left:20px; */
+    margin-top: 20px;
+    transform: translateY(-4px);
+    flex-wrap: wrap;
+}
 
+.tech{
+    border-radius: 10px;
+    height:30px;
+    background-color: #2F2D2E;
+    padding:5px 15px;
+    margin-right: 10px;
+    margin-bottom:10px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.tech:hover{
+    cursor:pointer;
+    background-color: #575757;
+}
 
+.tech p{
+    font-size: var(--psmallest);
+    font-family: 'Sequel Sans';
+    font-weight: bold;
+}
+
+#js{
+
+}
 
 /* ------------------active classes------------------------ */
 
@@ -477,6 +511,9 @@ header h1{
 }
 
 @media (max-width:1000px){
+    :root{
+        --h2:2em;
+    }
     .container{
         transform:scale(3);
     }
@@ -513,7 +550,11 @@ header h1{
 @media (max-width:800px) {
     :root{
         --h1:3rem;
+        --h2:2em;
         --p:1.2em;
+    }
+    h2{
+        margin-bottom:0;
     }
     #caret{
         height:2.5rem;
