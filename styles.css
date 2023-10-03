@@ -596,6 +596,13 @@ header h1{
         --h1:2.5rem;
         --p:1em;
     }
+    header{
+        height:90px;
+    }
+    header h1{
+        font-size:2.5em;
+        padding:20px;
+    }
     .extra{
         display: none;
     }
