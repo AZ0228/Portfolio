@@ -613,7 +613,7 @@ header h1{
         display: none;
     }
     .hero{
-        height: calc(90vh - 240px);
+        height: calc(90vh - 210px);
     }
     .project-container img{
         width: 250px;
