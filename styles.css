@@ -354,7 +354,7 @@ header h1{
     gap: 30px;
 }
 
-.project-container img{
+.project-container img:not(.open){
     width: 600px;
     height: auto;
     align-content: start;
@@ -402,7 +402,7 @@ header h1{
 
 .explore{
     position:absolute;
-    padding: 20px;
+    padding: 15px 20px;
     align-self:center;
     justify-self: center;
     justify-content: center;
@@ -414,22 +414,23 @@ header h1{
     pointer-events: none;
     transition:all 0.5s;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .explore:hover{
     cursor:pointer;
-    background-color: var(--text);
+    /* background-color: var(--text); */
     color:var(--bg);
-    box-shadow: 0px 0px 8px var(--text);
+    box-shadow: 0px 0px 30px var(--text);
 }
 
 .explore h4{
     transition:all 0.5s;
 }
 
-.explore:hover h4{
-    color:var(--bg2);
-}
+
 
 .project-img:hover .explore{
     opacity: 1;
@@ -466,14 +467,30 @@ header h1{
     font-weight: bold;
 }
 
-#js{
-
+.footer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+}
+.git-bottom{
+    height:40px;
+    width:40px;
+    transition: all 0.3s;
+}
+.git-bottom:hover{
+    cursor:pointer;
+    transform: scale(1.1);
 }
 
+.open{
+    height:30px;
+    width:30px;
+}
 /* ------------------active classes------------------------ */
 
 .hidden{
-    opacity:0 ;
+    opacity: 0;
 }
 
 .appear{

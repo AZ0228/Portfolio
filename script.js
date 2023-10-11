@@ -14,7 +14,12 @@ function learnMoreAnimation(){
 
 function scrollto(elem){
     const element = qs(elem);
-    element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    const topPosition = element.getBoundingClientRect().top;
+    window.scroll({
+        top: topPosition, 
+        left: 0, 
+        behavior: 'smooth' 
+      });
 }
 
 function setUpSmokeScreen(){
@@ -56,36 +61,18 @@ scroll.addEventListener('scroll', function() {
         return;
     }
     const elementTop = qs('.about').getBoundingClientRect().top;
-    const scrollY = window.scrollY;
+    const scrollY = window.scrollY+300;
     const learnmore = qs('.learn-more');
-    if(scrollY < elementTop){
-        learnmore.classList.remove('hidden');
+    if(scrollY > elementTop){
+        learnmore.style.opacity = 0;
     } else {
-        if(!learnmore.classList.contains('hidden')){
-            learnmore.classList.add('hidden');
-        }
+        learnmore.style.opacity = 1;
     }
-
-    // const projects = qs('.projects');
-    // const projectHeight = projects.getBoundingClientRect().top;
-    // const height = getCumulativeOffset(projects);
-    // const header = qs('header');
-    // if(scrollY > projectHeight-30){
-    //     console.log('fixed');
-    //     header.style.position = 'absolute';
-    //     header.style.top = `${height-30}px`;
-    //     header.style.transition = 'none';
-    // } else {
-    //     header.style.position = 'fixed';
-    //     header.style.top = "0px";
-    // }
-
 }); 
 
 document.addEventListener('DOMContentLoaded', function() {
     setUpSmokeScreen();
     learnMoreAnimation();
-
 });
 
 
