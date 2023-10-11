@@ -70,9 +70,24 @@ scroll.addEventListener('scroll', function() {
     }
 }); 
 
+function height(){
+    let footer = qs('.footer');
+    let footerBottom = footer.getBoundingClientRect().bottom;
+    let contentWrapper = qs('#contentWrapper');
+    contentWrapper.style.height = `${footerBottom}px`;
+    setTimeout(() => {
+        contentWrapper.style.overflow = 'hidden';    
+    }, 100);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     setUpSmokeScreen();
     learnMoreAnimation();
+    height();
+
+    window.addEventListener('resize', function(){
+        height();
+    });
 });
 
 
