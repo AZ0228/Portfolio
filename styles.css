@@ -24,6 +24,10 @@
     font-weight: normal;
 }
 
+a{
+    position:relative;
+}
+
 :root{
     --bg: #373536;
     --bg2: #575757;
@@ -487,6 +491,27 @@ header h1{
     height:30px;
     width:30px;
 }
+
+.circle{
+    position:absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+
+.circle:hover{
+    box-shadow: 0px 0px 10px var(--text);
+}
+
+.projects-header a{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* ------------------active classes------------------------ */
 
 .hidden{
