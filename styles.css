@@ -523,6 +523,13 @@ header h1{
 .contact img{
     height:35px;
     width:35px;
+    transition: all 0.5s;
+}
+
+.contact img:hover{
+    cursor:pointer;
+    transform: scale(1.1);
+    
 }
 
 /* ------------------active classes------------------------ */
