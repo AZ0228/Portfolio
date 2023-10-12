@@ -72,7 +72,7 @@ scroll.addEventListener('scroll', function() {
 
 function height(){
     let footer = qs('.footer');
-    let footerBottom = footer.getBoundingClientRect().bottom;
+    let footerBottom = footer.offsetTop + footer.offsetHeight;
     let contentWrapper = qs('#contentWrapper');
     contentWrapper.style.height = `${footerBottom}px`;
     setTimeout(() => {

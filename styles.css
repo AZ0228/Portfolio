@@ -307,7 +307,7 @@ header h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     gap:50px;
 }
 
@@ -518,11 +518,19 @@ header h1{
 .contact{
     display:flex;
     gap:30px;
+    margin-bottom: 50px;
 }
 
 .contact img{
     height:35px;
     width:35px;
+    transition: all 0.5s;
+}
+
+.contact img:hover{
+    cursor:pointer;
+    transform: scale(1.1);
+    
 }
 
 /* ------------------active classes------------------------ */
