@@ -515,6 +515,16 @@ header h1{
     align-items: center;
 }
 
+.contact{
+    display:flex;
+    gap:30px;
+}
+
+.contact img{
+    height:35px;
+    width:35px;
+}
+
 /* ------------------active classes------------------------ */
 
 .hidden{
@@ -641,6 +651,9 @@ header h1{
     }
     .project-container img{
         width: 300px;
+    }
+    .about{
+        gap:30px;
     }
 
 }
