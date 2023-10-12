@@ -84,10 +84,11 @@ document.addEventListener('DOMContentLoaded', function() {
     setUpSmokeScreen();
     learnMoreAnimation();
     height();
-
-    window.addEventListener('resize', function(){
-        height();
-    });
+    if(window.innerWidth>1000){
+        window.addEventListener('resize', function(){
+            height();
+        });
+    }
 });
 
 
