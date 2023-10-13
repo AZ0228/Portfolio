@@ -1,3 +1,5 @@
+//-------------------= typing animation =---------------------------------------------------
+
 const textElement = document.getElementById('text');
 const caretElement = document.getElementById('caret');
 
@@ -98,5 +100,75 @@ document.addEventListener('keypress', function(event) {
     clear = 100;
     interval = setInterval(type, 30);
     caretInterval = setInterval(toggleCaret, 80);
-  });
+});
 
+//-------------------= end typing animation =---------------------------------------------------
+
+
+//-------------------= other animations =---------------------------------------------------
+function learnMoreAnimation(){
+    const learnmore = qs('.learn-more');
+    learnmore.addEventListener('mouseover', function(){
+        const learnmoreimg = learnmore.querySelector('img');
+        setTimeout(() => {
+            learnmoreimg.src = "assets/chevron-down-glow.svg";            
+        }, 100);
+    });
+    learnmore.addEventListener('mouseleave', function(){
+        const learnmoreimg = learnmore.querySelector('img');
+        learnmoreimg.src = "assets/chevron-down.svg";
+    });
+}
+
+function startAnimation(){
+    let gone = qsa('.gone');
+    for(let item of gone){
+        item.classList.remove('gone');
+        item.classList.add('appear');
+        setTimeout(() => {
+            item.style.opacity = 1;
+        }, 500);
+    }
+}
+
+function setUpSmokeScreen(){
+    const windowtop = window.scrollY;
+    const smokescreen  = qs('.smokescreen');
+    smokescreen.style.transform = `translateY(${windowtop}px)`;
+    setTimeout(() => {
+            smokescreen.classList.add('hidden');
+    }, 100);    
+    setTimeout(() => {
+        smokescreen.style.display = 'none';
+    }, 2000);
+
+}
+
+function scrollLearnMore(){
+    const scroll = id('contentWrapper');
+    scroll.addEventListener('scroll', function() {
+        if(window.innerWidth<=1000){
+            return;
+        }
+        const elementTop = qs('.about').getBoundingClientRect().top;
+        const scrollY = window.scrollY+300;
+        const learnmore = qs('.learn-more');
+        if(scrollY > elementTop){
+            learnmore.style.opacity = 0;
+        } else {
+            learnmore.style.opacity = 1;
+        }
+    }); 
+}
+
+//-------------------= end other animations =---------------------------------------------------
+
+function mainAnimation(){
+    setUpSmokeScreen();
+    learnMoreAnimation();
+    scrollLearnMore();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    main();
+});
