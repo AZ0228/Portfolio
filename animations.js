@@ -170,5 +170,5 @@ function mainAnimation(){
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    main();
+    mainAnimation();
 });

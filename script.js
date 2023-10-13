@@ -8,7 +8,6 @@ function scrollto(elem){
       });
 }
 
-
 function getCumulativeOffset(element) {
     let height = 0;
     while(element) {
@@ -17,7 +16,6 @@ function getCumulativeOffset(element) {
     }
     return height;
 }
-
 
 function height(){
     let footer = qs('.footer');
@@ -41,7 +39,6 @@ function main(){
 document.addEventListener('DOMContentLoaded', function() {
     main();
 });
-
 
 function id(x) {
     return document.getElementById(x);
