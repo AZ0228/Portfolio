@@ -10,159 +10,161 @@
 </head>
 
 <body id="contentWrapper">
-    <div class="smokescreen"></div>
-    <img src="assets/bg3.png" alt="" id="bg1">
-    <img src="assets/bg1.png" alt="" id="bg1-mobile">
-
-    <div id="container">
-        <img src="assets/bg11.png" alt="" id="bg2">
-        <canvas id="canvas"></canvas>
-    </div>
-    <section class="content-container">
-        <section class="content">
-
-            <header class="gone">
-                <h1 id="logo">J</h1>
-                <!-- <hr> -->
-                <nav class="nav">
-                    <a onclick="scrollto('.about')">ABOUT</a>
-                    <a onclick="scrollto('.projects')">PROJECTS</a>
-        
-                </nav>
-            </header>
-            <section class="hero">
-                <div id="wrapper">
-                    <span id="text"></span>
-                    <span id="caret"></span>
-                </div>
-                <!--  -->
-                <a class="gone learn-more" onclick="scrollto('.about')">
-                    <p>learn more about me</p>
-                    <img src="assets/chevron-down.svg" alt="">
-                </a>
-            </section>
-            <section class="about">
-                <h2>nice to meet you!</h2>
-                <p>I’m currently a second year computer science student studying at the Rensselaer Polytechnic Institute. I have a strong passion for web development and have honed my skills in UI/UX design, frontend, and backend development. Specifically, I’m experienced with HTML, CSS, AJAX (js fetch), JavaScript, C++, Python (Flask), and Figma.</p>
-                <p>What excites me the most about web development is the opportunity to create intuitive and impactful user experiences. Below, you'll find a showcase of my projects. Feel free to check them out or reach out if you'd like to collaborate!</p>
-                <div class="contact">
-                    <a href="https://www.linkedin.com/in/jamesliu0309/" target="blank">
-                        <img src="assets/linkedin.svg" alt="">
+    <div id="root">
+        <div class="smokescreen"></div>
+        <img src="assets/bg3.png" alt="" id="bg1">
+        <img src="assets/bg1.png" alt="" id="bg1-mobile">
+    
+        <div id="container">
+            <img src="assets/bg11.png" alt="" id="bg2">
+            <canvas id="canvas"></canvas>
+        </div>
+        <section class="content-container">
+            <section class="content">
+    
+                <header class="gone">
+                    <h1 id="logo">J</h1>
+                    <!-- <hr> -->
+                    <nav class="nav">
+                        <a onclick="scrollto('.about')">ABOUT</a>
+                        <a onclick="scrollto('.projects')">PROJECTS</a>
+            
+                    </nav>
+                </header>
+                <section class="hero">
+                    <div id="wrapper">
+                        <span id="text"></span>
+                        <span id="caret"></span>
+                    </div>
+                    <!--  -->
+                    <a class="gone learn-more" onclick="scrollto('.about')">
+                        <p>learn more about me</p>
+                        <img src="assets/chevron-down.svg" alt="">
                     </a>
-                    <a href="mailto:liujames004@gmail.com">
-                        <img src="assets/email.svg" alt="">
-                    </a>
-                    <a href="https://github.com/AZ0228" target="blank">
-                        <img src="assets/git.svg" alt="">
-                    </a>
-
-                </div>
-            </section>
-            <section class="projects">
-                <h2>featured projects</h2>
-                <div class="project">
-                    <div class="projects-header">
-                        <h3>pinkpulse</h3>
-                        <a href="https://github.com/AZ0228/PinkpulseFS" target="_blank">
-                            <img src="assets/git.svg" alt="" class="git">
-                            <div class="circle"></div>
+                </section>
+                <section class="about">
+                    <h2>nice to meet you!</h2>
+                    <p>I’m currently a second year computer science student studying at the Rensselaer Polytechnic Institute. I have a strong passion for web development and have honed my skills in UI/UX design, frontend, and backend development. Specifically, I’m experienced with HTML, CSS, AJAX (js fetch), JavaScript, C++, Python (Flask), and Figma.</p>
+                    <p>What excites me the most about web development is the opportunity to create intuitive and impactful user experiences. Below, you'll find a showcase of my projects. Feel free to check them out or reach out if you'd like to collaborate!</p>
+                    <div class="contact">
+                        <a href="https://www.linkedin.com/in/jamesliu0309/" target="blank">
+                            <img src="assets/linkedin.svg" alt="">
                         </a>
-                    </div>                    
-                    <div class="project-container">
-                        <div class="project-img">
-                            <a href="https://www.pinkpulse.org" target="_blank" class="explore">
-                                <h4>try it out!</h4>
-                                <img src="assets/open.svg" alt="" class="open">
-
-                            </a>
-                            <img src="assets/pinkpulse1.png" alt="">
-                        </div>
-                        <div class="ptext">
-                            <p>PinkPulse is a fullstack data visualization tool developed to analyze and represent trends in period poverty through an intersectional lens, utilizing data from the US Census API. The application focuses on examining statistics such as income level, racial distribution, and total money spent on period products across counties in California. Deployed using Heroku.</p>
-                            <p class="extra">The mission of PinkPulse is to elevate awareness and stimulate informed dialogues around period poverty by delivering comprehensive and intersectional insights. By uncovering and highlighting the disparities and trends prevalent in California, PinkPulse aspires to inspire meaningful action and advocate for equitable and impactful solutions to combat period poverty.</p>
-                        </div>
-                    </div>
-                    <div class="technologies">
-                        <div class="tech"><p>JavaScript</p></div>
-                        <div class="tech"><p>Python</p> </div>
-                        <div class="tech"><p>Flask</p> </div>
-                        <div class="tech"><p>AJAX</p></div>
-                        <div class="tech"><p>HTML/CSS</p></div>
-                        <div class="tech"><p>Chartjs</p></div>
-                        <div class="tech"><p>API</p></div>
-                        <div class="tech"><p>Figma</p></div>
-
-                    </div>
-
-                </div>
-                <div class="project">
-                    <div class="projects-header">
-                        <h3>daikowallet</h3>
-                        <a href="https://github.com/DaikoWallet/daiko-wallet" target="_blank">
-                            <img src="assets/git.svg" alt="" class="git">
-                            <div class="circle"></div>
+                        <a href="mailto:liujames004@gmail.com">
+                            <img src="assets/email.svg" alt="">
                         </a>
-                    </div>
-
-                    <div class="project-container">
-                        <div class="project-img">
-                            <a href="https://github.com/DaikoWallet/daiko-wallet" target="_blank" class="explore">
-                                <h4>github repo</h4>
-                                <img src="assets/open.svg" alt="" class="open">
-
-                            </a>
-                            <img src="assets/daikowallet.png" alt="">
-                        </div>
-                        <div class="ptext">
-                            <p>DaikoWallet is a full-stack application designed to revolutionize personal financial management. Its user-centric interface promotes healthy spending and saving patterns through a goal-oriented experience. </p>
-                            <p class="extra">What truly sets it apart is the integration of social accountability—transforming budgeting into an engaging competition among peers. Users can set, track, and compare their financial objectives, making finance management not just a necessity, but an exciting journey towards collective financial growth.</p>
-                        </div>
-                    </div>
-                    <div class="technologies">
-                        <div class="tech"><p>JavaScript</p></div>
-                        <div class="tech"><p>Python</p> </div>
-                        <div class="tech"><p>Flask</p> </div>
-                        <div class="tech"><p>AJAX</p></div>
-                        <div class="tech"><p>HTML/CSS</p></div>
-                        <div class="tech"><p>Figma</p></div>
-                    </div>
-                </div>
-
-                <div class="project">
-                    <div class="projects-header">
-                        <h3>heyimhershy influencer website</h3>
-                        <a href="https://az0228.github.io/HeyImHershy/" target="blank">
-                            <img src="assets/git.svg" alt="" class="git">
-                            <div class="circle"></div>
-
+                        <a href="https://github.com/AZ0228" target="blank">
+                            <img src="assets/git.svg" alt="">
                         </a>
-                    </div>                   
-                    <div class="project-container">
-                        <div class="project-img">
-                            <a href="https://az0228.github.io/HeyImHershy/" target="_blank" class="explore">
-                                <h4>visit</h4>
-                                <img src="assets/open.svg" alt="" class="open">
+    
+                    </div>
+                </section>
+                <section class="projects">
+                    <h2>featured projects</h2>
+                    <div class="project">
+                        <div class="projects-header">
+                            <h3>pinkpulse</h3>
+                            <a href="https://github.com/AZ0228/PinkpulseFS" target="_blank">
+                                <img src="assets/git.svg" alt="" class="git">
+                                <div class="circle"></div>
                             </a>
-                            <img src="assets/6.png" alt="">
+                        </div>                    
+                        <div class="project-container">
+                            <div class="project-img">
+                                <a href="https://www.pinkpulse.org" target="_blank" class="explore">
+                                    <h4>try it out!</h4>
+                                    <img src="assets/open.svg" alt="" class="open">
+    
+                                </a>
+                                <img src="assets/pinkpulse1.png" alt="">
+                            </div>
+                            <div class="ptext">
+                                <p>PinkPulse is a fullstack data visualization tool developed to analyze and represent trends in period poverty through an intersectional lens, utilizing data from the US Census API. The application focuses on examining statistics such as income level, racial distribution, and total money spent on period products across counties in California. Deployed using Heroku.</p>
+                                <p class="extra">The mission of PinkPulse is to elevate awareness and stimulate informed dialogues around period poverty by delivering comprehensive and intersectional insights. By uncovering and highlighting the disparities and trends prevalent in California, PinkPulse aspires to inspire meaningful action and advocate for equitable and impactful solutions to combat period poverty.</p>
+                            </div>
                         </div>
-                        <div class="ptext">
-                            <p>Given a static design concept from Canva, I brought the vibrant personality of internet influencer, HeyImHershy, to life in her personal website.</p>
-                            <p class="extra"> Going beyond implementation, I infused the site with my own creative touch, introducing unique animations and interactivity to provide visitors with an immersive experience. This isn't just a website—it's a digital playground that offers glimpses into the quirky and captivating world of HeyImHershy.</p>
+                        <div class="technologies">
+                            <div class="tech"><p>JavaScript</p></div>
+                            <div class="tech"><p>Python</p> </div>
+                            <div class="tech"><p>Flask</p> </div>
+                            <div class="tech"><p>AJAX</p></div>
+                            <div class="tech"><p>HTML/CSS</p></div>
+                            <div class="tech"><p>Chartjs</p></div>
+                            <div class="tech"><p>API</p></div>
+                            <div class="tech"><p>Figma</p></div>
+    
+                        </div>
+    
+                    </div>
+                    <div class="project">
+                        <div class="projects-header">
+                            <h3>daikowallet</h3>
+                            <a href="https://github.com/DaikoWallet/daiko-wallet" target="_blank">
+                                <img src="assets/git.svg" alt="" class="git">
+                                <div class="circle"></div>
+                            </a>
+                        </div>
+    
+                        <div class="project-container">
+                            <div class="project-img">
+                                <a href="https://github.com/DaikoWallet/daiko-wallet" target="_blank" class="explore">
+                                    <h4>github repo</h4>
+                                    <img src="assets/open.svg" alt="" class="open">
+    
+                                </a>
+                                <img src="assets/daikowallet.png" alt="">
+                            </div>
+                            <div class="ptext">
+                                <p>DaikoWallet is a full-stack application designed to revolutionize personal financial management. Its user-centric interface promotes healthy spending and saving patterns through a goal-oriented experience. </p>
+                                <p class="extra">What truly sets it apart is the integration of social accountability—transforming budgeting into an engaging competition among peers. Users can set, track, and compare their financial objectives, making finance management not just a necessity, but an exciting journey towards collective financial growth.</p>
+                            </div>
+                        </div>
+                        <div class="technologies">
+                            <div class="tech"><p>JavaScript</p></div>
+                            <div class="tech"><p>Python</p> </div>
+                            <div class="tech"><p>Flask</p> </div>
+                            <div class="tech"><p>AJAX</p></div>
+                            <div class="tech"><p>HTML/CSS</p></div>
+                            <div class="tech"><p>Figma</p></div>
                         </div>
                     </div>
-                    <div class="technologies">
-                        <div class="tech"><p>JavaScript</p></div>
-                        <div class="tech"><p>HTML/CSS</p></div>
-                        <div class="tech"><p>Figma</p></div>
+    
+                    <div class="project">
+                        <div class="projects-header">
+                            <h3>heyimhershy influencer website</h3>
+                            <a href="https://az0228.github.io/HeyImHershy/" target="blank">
+                                <img src="assets/git.svg" alt="" class="git">
+                                <div class="circle"></div>
+    
+                            </a>
+                        </div>                   
+                        <div class="project-container">
+                            <div class="project-img">
+                                <a href="https://az0228.github.io/HeyImHershy/" target="_blank" class="explore">
+                                    <h4>visit</h4>
+                                    <img src="assets/open.svg" alt="" class="open">
+                                </a>
+                                <img src="assets/6.png" alt="">
+                            </div>
+                            <div class="ptext">
+                                <p>Given a static design concept from Canva, I brought the vibrant personality of internet influencer, HeyImHershy, to life in her personal website.</p>
+                                <p class="extra"> Going beyond implementation, I infused the site with my own creative touch, introducing unique animations and interactivity to provide visitors with an immersive experience. This isn't just a website—it's a digital playground that offers glimpses into the quirky and captivating world of HeyImHershy.</p>
+                            </div>
+                        </div>
+                        <div class="technologies">
+                            <div class="tech"><p>JavaScript</p></div>
+                            <div class="tech"><p>HTML/CSS</p></div>
+                            <div class="tech"><p>Figma</p></div>
+                        </div>
                     </div>
-                </div>
-
-            </section>
-            <section class="footer">
-                <a href="https://github.com/AZ0228/portfoliov2"><img src="assets/githubBottom.svg" alt="" class="git-bottom"></a>
+    
+                </section>
+                <section class="footer">
+                    <a href="https://github.com/AZ0228/portfoliov2"><img src="assets/githubBottom.svg" alt="" class="git-bottom"></a>
+                </section>
             </section>
         </section>
-    </section>
+    </div>
     <script src="script.js"></script>
     <script src="animations.js"></script>
     <script src="bg.js"></script>
