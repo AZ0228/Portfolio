@@ -60,3 +60,16 @@ if(window.innerWidth > 800) {
     });
 
 }
+
+
+function id(x) {
+    return document.getElementById(x);
+}
+
+function qs(x) {
+    return document.querySelector(x);
+}
+
+function qsa(x) {
+    return document.querySelectorAll(x);
+}

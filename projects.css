@@ -1,0 +1,6 @@
+.all-projects{
+    height:1000px;
+    width:100%;
+    background-color: var(--bg);
+    margin:50px;
+}
