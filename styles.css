@@ -24,6 +24,18 @@
     font-weight: normal;
 }
 
+@font-face {
+    font-family: Sequel Sans Body;
+    src: url(fonts/Sequel\ Sans\ Bold\ Body.otf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Sequel Sans Body1;
+    src: url(fonts/Sequel\ Sans\ Roman\ Body.otf);
+    font-weight: normal;
+}
+
 a{
     position:relative;
 }
@@ -32,6 +44,7 @@ a{
     --bg: #373536;
     --bg2: #575757;
     --text: #F8F8F8;
+    --text2: #B5B5B5;
     --cursorX: 0;
     --cursorY: 0;
     --width:1500px;
@@ -119,13 +132,13 @@ body img{
 
 .content-container{
     display: flex;
-    justify-content: center;
     /* pointer-events: none; */
     position: relative;
     z-index: 1;
     overflow: hidden;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
 }
 
 .content{
