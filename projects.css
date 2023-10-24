@@ -15,7 +15,10 @@
     width:100%;
 }
 
-
+a{
+    text-decoration: none;
+    color: var(--text);
+}
 
 .all-projects{
     max-width: 1200px;
@@ -55,6 +58,11 @@
 .row div{
     font-family:'Sequel Sans Body1';
     font-size:18px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    align-content: center;
+    flex-wrap: wrap;
 }
 
 .row .y{
@@ -68,12 +76,21 @@
 
 .n{
     width: 30%;
-
+    font-family:'Sequel Sans Body' !important;
 }
 
 .t{
     width: 40%;
 
+}
+
+.t p{
+    font-family: 'Sequel Sans Body';
+    color: #B5B5B5;
+    background-color: var(--bg2);
+    border-radius: 5px;
+    padding: 5px 8px;
+    font-size:14px;
 }
 
 .l{
@@ -100,4 +117,29 @@ hr{
     box-sizing: border-box;
     gap: 50px;
     padding: 70px;
+}
+
+@media (max-width:1000px){
+    #bg1-mobile{
+        display:block;
+        transform:scale(1.5);
+        height: auto;
+        width: 100%;
+    }
+
+
+}
+
+@media (max-width:800px) {
+    #bg1-mobile{
+        display:block;
+        transform:scale(1.5);
+        height: auto;
+        width: 100%;
+    }
+
+}
+
+@media (max-width:500px){
+    
 }
