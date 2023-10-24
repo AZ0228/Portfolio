@@ -1,4 +1,8 @@
-
+:root{
+    --sizeheader:20px;
+    --sizerow:18px;
+    --sizetech:14px;
+}
 .all-projects{
     /* height:1000px; */
     max-width: 100%;
@@ -27,13 +31,14 @@ a{
     border: 3px solid var(--bg2);
     padding: 10px 35px 30px 35px;
     width: 100%;
-    margin: 0px 50px;
+    margin: 0px 30px;
     color:var(--text);
     font-family: 'Sequel Sans Body';
     font-size: 20px;
     text-shadow: none;
     display:flex;
     flex-direction: column;
+    box-sizing: border-box;
 }
 
 .all-projects:last-child{
@@ -48,6 +53,11 @@ a{
     display:flex;
     width:100%;
     margin-top:20px;
+    font-size:var(--sizeheader);
+}
+
+.header div{
+    padding:0 10px;
 }
 
 .row{
@@ -57,12 +67,14 @@ a{
 
 .row div{
     font-family:'Sequel Sans Body1';
-    font-size:18px;
+    font-size:var(--sizerow);
     display: flex;
     align-items: center;
     gap: 5px;
     align-content: center;
     flex-wrap: wrap;
+    padding:0 10px;
+    box-sizing: border-box;
 }
 
 .row .y{
@@ -89,8 +101,8 @@ a{
     color: #B5B5B5;
     background-color: var(--bg2);
     border-radius: 5px;
-    padding: 5px 8px;
-    font-size:14px;
+    padding: 3px 5px;
+    font-size: var(--sizetech);
 }
 
 .l{
@@ -115,8 +127,8 @@ hr{
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    gap: 50px;
-    padding: 70px;
+    gap: 20px;
+    padding: 50px;
 }
 
 @media (max-width:1000px){
@@ -126,20 +138,58 @@ hr{
         height: auto;
         width: 100%;
     }
-
-
 }
 
 @media (max-width:800px) {
+    :root{
+        --sizeheader:18px;
+        --sizerow:16px;
+        --sizetech:14px;
+    }
     #bg1-mobile{
         display:block;
         transform:scale(1.5);
         height: auto;
         width: 100%;
     }
-
+    .row div.l,
+    .l{
+        display: none;
+    }
+    .y{
+        width: 20%;
+    }
+    .n{
+        width:40%;
+    }
+    .t{
+        width:40%;
+    }
 }
 
 @media (max-width:500px){
-    
+    :root{
+        --size-header:16px;
+        --sizerow:14px;
+        --sizetech:10px;
+    }
+    #bg1-mobile{
+        display:block;
+        transform:scale(2);
+        height: auto;
+        width: 100%;
+    }
+    #all-projects{
+        padding: 10px;
+    }
+    .all-projects{
+        padding: 10px 20px 30px 20px;
+    }
+    .header div,
+    .row div{
+        padding:0 5px;
+    }
+    .content-container h3{
+        margin: 20px;
+    }
 }
