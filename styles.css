@@ -38,6 +38,8 @@
 
 a{
     position:relative;
+    text-decoration: none;
+    color: var(--text);
 }
 
 :root{
@@ -506,8 +508,8 @@ header h1{
 }
 
 .open{
-    height:30px;
-    width:30px;
+    height: 18px;
+    width: 18px;
 }
 
 .circle{
