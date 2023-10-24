@@ -42,6 +42,18 @@ a{
     color: var(--text);
 }
 
+a.navigation{
+    font-family:'Sequel Sans Body1';
+    font-size:24px;
+    display:flex;
+    align-items: center;
+}
+
+a.navigation img{
+    width:40px;
+    height:40px;
+    transform:translateY(0px);
+}
 :root{
     --bg: #373536;
     --bg2: #575757;
