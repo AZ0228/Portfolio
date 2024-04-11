@@ -207,7 +207,7 @@ header h1{
     font-family:'Joyride W05 STD';
     color:var(--text);
     margin:0;
-    font-size:3.25rem;
+    font-size:3rem;
     padding:30px;
 }
 
@@ -238,10 +238,10 @@ header h1{
 }
 
 .nav a{
-    font-family:'Sequel Sans';
+    font-family:'Sequel Sans1';
     font-weight: lighter;
     color:var(--text);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     letter-spacing: 3px;
 }
 
@@ -643,9 +643,8 @@ header h1{
     }
     #bg1-mobile{
         display:block;
-        transform:scale(2.5);
-        height: 60%;
-        width: auto;
+        /* transform:scale(2.5); */
+        width: 100%;
     }
 
 
@@ -685,9 +684,9 @@ header h1{
     }
     #bg1-mobile{
         display:block;
-        transform:scale(2.5);
-        height: 60%;
-        width: auto;
+        /* transform:scale(2.5); */
+        /* height: 60%; */
+        width: 100%;
     }
     .project-container img{
         width: 300px;
