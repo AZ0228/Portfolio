@@ -117,7 +117,7 @@ p{
     letter-spacing: 1px;
 }
 
-h1:hover,
+/* h1:hover, */
 /* #text:hover, */
 a:hover{
     text-shadow: 0px 0px 4px var(--text);
@@ -126,15 +126,15 @@ a:hover{
 }
 
 .hover-main{
-    text-shadow: 0px 0px 6px var(--text);
+    text-shadow: 0px 0px 10px var(--text);
 }
 
 .hover-near{
-    text-shadow: 0px 0px 4px var(--text);
+    text-shadow: 0px 0px 6px var(--text);
 }
 
 .hover-far{
-    text-shadow: 0px 0px 2px var(--text);
+    text-shadow: 0px 0px 4px var(--text);
 }
 
 html{
@@ -300,6 +300,7 @@ header h1{
 #text h1{
     white-space: pre; /* This will preserve whitespace and breaks */
     display: inline-block;
+    transition: all 0.3s;
 }
 
 #caret {
@@ -316,6 +317,8 @@ header h1{
 #logo{
     text-shadow: 0px 0px 5px var(--text);
     animation: pulse-shadow 4s infinite;
+    height:50px;
+    width:50px;
 }
 
 .git{
@@ -406,7 +409,6 @@ header h1{
     justify-content: space-between;
     align-items: center;
     margin: 0px 0px 30px 5px;
-
 }
 
 .project-container{
@@ -489,8 +491,6 @@ header h1{
 .explore h4{
     transition:all 0.5s;
 }
-
-
 
 .project-img:hover .explore{
     opacity: 1;

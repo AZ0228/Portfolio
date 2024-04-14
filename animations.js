@@ -162,33 +162,36 @@ function scrollLearnMore(){
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const letters = document.querySelectorAll('#text h1');
-
-    console.log(letters);
-
-    letters.forEach((letter, index) => {
-        letter.addEventListener('mouseover', () => {
-            // Apply main hover effect to the current letter
-            letter.classList.add('hover-main');
-
-            // Apply diminishing effect to the neighboring letters
-            if (index > 0) letters[index - 1].classList.add('hover-near'); // Previous letter
-            if (index < letters.length - 1) letters[index + 1].classList.add('hover-near'); // Next letter
-
-            if (index > 1) letters[index - 2].classList.add('hover-far'); // Two letters back
-            if (index < letters.length - 2) letters[index + 2].classList.add('hover-far'); // Two letters ahead
+    setTimeout(() => {
+        
+        const letters = document.querySelectorAll('#text h1');
+    
+        console.log(letters);
+    
+        letters.forEach((letter, index) => {
+            letter.addEventListener('mouseover', () => {
+                // Apply main hover effect to the current letter
+                letter.classList.add('hover-main');
+    
+                // Apply diminishing effect to the neighboring letters
+                if (index > 0) letters[index - 1].classList.add('hover-near'); // Previous letter
+                if (index < letters.length - 1) letters[index + 1].classList.add('hover-near'); // Next letter
+    
+                if (index > 1) letters[index - 2].classList.add('hover-far'); // Two letters back
+                if (index < letters.length - 2) letters[index + 2].classList.add('hover-far'); // Two letters ahead
+            });
+    
+            letter.addEventListener('mouseout', () => {
+                // Remove all effects
+                letter.classList.remove('hover-main');
+                if (index > 0) letters[index - 1].classList.remove('hover-near');
+                if (index < letters.length - 1) letters[index + 1].classList.remove('hover-near');
+    
+                if (index > 1) letters[index - 2].classList.remove('hover-far');
+                if (index < letters.length - 2) letters[index + 2].classList.remove('hover-far');
+            });
         });
-
-        letter.addEventListener('mouseout', () => {
-            // Remove all effects
-            letter.classList.remove('hover-main');
-            if (index > 0) letters[index - 1].classList.remove('hover-near');
-            if (index < letters.length - 1) letters[index + 1].classList.remove('hover-near');
-
-            if (index > 1) letters[index - 2].classList.remove('hover-far');
-            if (index < letters.length - 2) letters[index + 2].classList.remove('hover-far');
-        });
-    });
+    }, 5000);
 });
 
 //-------------------= end other animations =---------------------------------------------------
