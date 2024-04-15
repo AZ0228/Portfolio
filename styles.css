@@ -126,7 +126,7 @@ a:hover{
 }
 
 .hover-main{
-    text-shadow: 0px 0px 10px var(--text);
+    text-shadow: 0px 0px 11px var(--text);
 }
 
 .hover-near{
@@ -301,6 +301,7 @@ header h1{
     white-space: pre; /* This will preserve whitespace and breaks */
     display: inline-block;
     transition: all 0.3s;
+    cursor:default;
 }
 
 #caret {
@@ -319,6 +320,7 @@ header h1{
     animation: pulse-shadow 4s infinite;
     height:50px;
     width:50px;
+    margin-left:40px;
 }
 
 .git{
