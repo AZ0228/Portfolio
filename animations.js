@@ -42,11 +42,13 @@ function toggleCaret() {
 function type(){
     if(!isCorrecting){
         if(index < typing.length){
-            if(caretVisible == false){
+            if(!caretVisible){
                 return;
             }
             isTyping = true;
-            textElement.innerHTML += typing[index];
+            let newElement = document.createElement('h1');
+            newElement.textContent = typing[index];
+            textElement.appendChild(newElement);
             index++;
             moveCaret();
         }
@@ -56,7 +58,6 @@ function type(){
                 setTimeout(() => {
                     caretElement.style.display = 'none';
                     clearInterval(caretInterval);
-
                     clearInterval(interval);
                 }, clear);   
                 setTimeout(() => {                  
@@ -64,7 +65,7 @@ function type(){
                 }, 300); 
             }
             else {
-                if(mistypeWaiting == 0 && caretVisible==true){
+                if(mistypeWaiting == 0 && caretVisible){
                     isCorrecting = true;
                     isTyping = true;
                 } else {
@@ -72,19 +73,18 @@ function type(){
                         mistypeWaiting--;
                     }
                     isTyping = false;
-
                 }
             }
         }    
     } else {
         typing = textToType;
-        if(textElement.innerHTML == typing.slice(0,textElement.innerHTML.length)){
+        if(textElement.textContent === typing.slice(0, textElement.children.length)){
             isCorrecting = false;
         } else {
-            textElement.innerHTML = textElement.innerHTML.slice(0, -1);
+            textElement.removeChild(textElement.lastChild);
             index--;
             moveCaret();
-            console.log('correcting')
+            console.log('correcting');
         }
     }
 }
@@ -160,6 +160,39 @@ function scrollLearnMore(){
         }
     }); 
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+        
+        const letters = document.querySelectorAll('#text h1');
+    
+        console.log(letters);
+    
+        letters.forEach((letter, index) => {
+            letter.addEventListener('mouseover', () => {
+                // Apply main hover effect to the current letter
+                letter.classList.add('hover-main');
+    
+                // Apply diminishing effect to the neighboring letters
+                if (index > 0) letters[index - 1].classList.add('hover-near'); // Previous letter
+                if (index < letters.length - 1) letters[index + 1].classList.add('hover-near'); // Next letter
+    
+                if (index > 1) letters[index - 2].classList.add('hover-far'); // Two letters back
+                if (index < letters.length - 2) letters[index + 2].classList.add('hover-far'); // Two letters ahead
+            });
+    
+            letter.addEventListener('mouseout', () => {
+                // Remove all effects
+                letter.classList.remove('hover-main');
+                if (index > 0) letters[index - 1].classList.remove('hover-near');
+                if (index < letters.length - 1) letters[index + 1].classList.remove('hover-near');
+    
+                if (index > 1) letters[index - 2].classList.remove('hover-far');
+                if (index < letters.length - 2) letters[index + 2].classList.remove('hover-far');
+            });
+        });
+    }, 5000);
+});
 
 //-------------------= end other animations =---------------------------------------------------
 
